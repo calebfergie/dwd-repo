@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Higher Order Beliefs</title>
+  </head>
+  <body>
+    <h1>P0P Quiz!</h1>
+    <h3>Here’s is a somewhat fun, and subtly interesting game from the world of ecomomics:</h3><br>
+
+    <p>Suppose everyone in ITP picks a number between 0 and 100, inclusive (i.e. 0 and 100 are both possible choices, as is any other number between). <br><br>
+    They pick knowing that winner is the individual (or individuals) who selects the number closest to <strong>2/3 of the average of all the numbers chosen.</strong><br><br><br>
+
+    What number would you choose?</p>
+
+    <form action="/process-response" method="POST">
+      <div>
+        <label for="answer">Your guess:</label>
+        <input type="number" name="submitted_answer" />
+        <input type="submit" name="submitButton" value ="Submit" />
+</div>
+
+    </div>
+
+    </form>
+
+    <br><br><br><br><br><br><br><br><br>
+    <footer>This write-up of the riddle is adapted from from the <a href="https://theincidentaleconomist.com/whats-23-of-the-average/">incidental economist</a></footer>
+  </body>
+</html>
+
+<style>
+footer {
+  font-size:8pt;
+  }
+
+  .button {
+    display: inline;
+  }
+
+</style>
