@@ -8,11 +8,11 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var results = require('./routes/results');
-//var mongojs = require('mongojs');
-//var dbconfig = require('./config/dbconfig.js')
+var mongojs = require('mongojs');
+var dbconfig = require('./config/dbconfig.js')
 
 // add mongo database
-//var db = mongojs("dbconfig.username:dbconfig.password@ds021989.mlab.com:21989/mr-worldwide", ["guessTable"]);
+var db = mongojs(dbconfig.username + ":" + dbconfig.password + "@ds021989.mlab.com/mr-worldwide", ["guessTable"]);
 
 var app = express();
 

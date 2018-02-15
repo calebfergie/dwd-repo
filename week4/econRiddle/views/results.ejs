@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Current Results</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-        <h1>Your Submission</h1>
-        <% if (person) {  %>
-                <h2><%= person.name %><h2>
-                <h3><%= person.other %></h3>
-        <% } %>
-        <h1>Current Set of Results</h1>
-</body>
-</html>
+  <head>
+    <meta charset="utf-8">
+    <title>Explaination</title>
+  </head>
+  <body>
+    <h2>You Submitted </h2> <h2>  <%= answer.submission %> </h2>
+    <h2>The current average is:</h2> <h2> <%= answer.avg %> </h2>
+      <p>There is no one one answer to this game, but it sure makes you think...<br>
+        <a href="https://www.npr.org/sections/money/2011/10/11/141249864/heres-the-winner-in-our-pick-a-number-game">read more about it here</a></p>
+  </body>
+</html> 

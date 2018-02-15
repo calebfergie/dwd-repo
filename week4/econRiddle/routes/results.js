@@ -1,6 +1,8 @@
 var express = require('express');
+var fs = require('fs');
 var mongojs = require('mongojs');
 var dbconfig = require('../config/dbconfig.js');
+var responseList = [];
 
 // add mongo database
 
@@ -16,20 +18,39 @@ db.on('connect', function() {
   console.log('database connected')
 })
 
-router.post('/', function(req, res, next) {
-  db.guessTable.save({
-    "attribute_to_save": "value_to_save"
-  }, function(err, saved) {
-    if (err || !saved) console.log("Not saved");
-    else console.log("Saved");
+router.post('/', function(request, respond, next) {
+  var textValue = request.body.submitted_answer;
+
+  //visual confirmation
+  console.log("A user just submitted: " + textValue);
+
+  // Add responses to csv file
+  var fileAddition = numberValue + ","
+  filePath = __dirname + 'data.csv';
+  fs.appendFile(filePath, fileAddition, function(err) {
+    if (err) throw err;
   });
+
+  // define the new average that includes the new submission
+  var numberValue = parseInt(textValue);
+  responseList.push(numberValue);
+  console.log(textValue + "added to the list of responses");
+  var subTotal = 0;
+  for (i = 0; i < responseList.length; i++) {
+    subTotal = subTotal + responseList[i];
+  }
+  console.log("Subtotal: " + subTotal);
+  var average = subTotal / responseList.length;
+  console.log("The current average is: " + average);
   var data = {
-    person: {
-      name: "Caleb",
-      other: dbconfig.username
+    answer: {
+      submission: textValue,
+      avg: average
     }
-  };
-  res.render('results', data);
+  }
+  respond.render('results', data);
+  respond.end();
+
 });
 
 router.get('/', function(req, res, next) {
