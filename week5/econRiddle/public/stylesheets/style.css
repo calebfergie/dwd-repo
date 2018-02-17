@@ -1,8 +1,36 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+header {
+  padding: 154px 0 100px;
 }
 
-a {
-  color: #00B7FF;
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+section {
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+}
+
+#example {
+  background-color: rgba(220,220,220,0.5);
+}
+
+#exampleTables {
+  font-size: 0.8rem;
+}
+
+#postForm {
+  padding-top: 1rem;
+}
+
+#FAQ {
+  padding-top: 1rem;
 }
