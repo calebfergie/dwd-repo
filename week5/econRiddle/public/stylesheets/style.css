@@ -19,6 +19,9 @@ section {
   padding-bottom: 1rem;
 }
 
+footer {
+}
+
 #example {
   background-color: rgba(220,220,220,0.5);
 }
@@ -28,9 +31,14 @@ section {
 }
 
 #postForm {
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 #FAQ {
+  display:none;
   padding-top: 1rem;
+}
+
+.exampleWrapper {
+  display:none;
 }

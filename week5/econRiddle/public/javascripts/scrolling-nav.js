@@ -20,6 +20,12 @@
     $('.navbar-collapse').collapse('hide');
   });
 
+  // Opens the example if the link is clicked on
+  $('.exampleToggle').click(function() {
+    console.log("toggle clicked");
+    $('.exampleWrapper').collapse('toggle');
+  });
+
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#mainNav',
