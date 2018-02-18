@@ -30,7 +30,7 @@ footer {
   font-size: 0.8rem;
 }
 
-#postForm {
+#postForm, #discussion {
   padding-top: 2rem;
 }
 
