@@ -29,15 +29,19 @@
 
   <section id="main">
     <div class="row" id=submissionSummary>
-      <div class="col-lg-8 mx-auto">
-        <h2>You submitted: </h2> <h2>  <%= answer.submission %> </h2><br>
-        <h2>The current average is:</h2> <h2> <%= answer.avg %> </h2>
+      <div class="col-md-2 mx-auto" id=sidePic>
+        <img src="https://i.imgur.com/BIm9PsB.jpg">
       </div>
-    </div>
-    <div class="row" id=discussion>
       <div class="col-lg-8 mx-auto">
-        <p class="lead">There is no one answer to this game, but it sure makes you think...<br>
-          <a href="https://www.npr.org/sections/money/2011/10/11/141249864/heres-the-winner-in-our-pick-a-number-game">read more about it here</a></p>
+        <h2>You submitted:  <%= answer.submission %> </h2><br>
+        <h2>The current average is: <%= answer.avg %> </h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0sPVEBAtwmg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="col-lg-8 mx-auto" id=discussion>
+        <div class="col-lg-8 mx-auto">
+          <p class="lead">There is no one answer to this game, but it sure makes you think...<br>
+            <a href="https://www.npr.org/sections/money/2011/10/11/141249864/heres-the-winner-in-our-pick-a-number-game">read more about it here</a></p>
+        </div>
       </div>
     </div>
   </section>

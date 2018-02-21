@@ -23,6 +23,10 @@ section {
 footer {
 }
 
+iframe {
+  padding-left: 1rem;
+}
+
 #example {
   background-color: rgba(220,220,220,0.5);
 }
@@ -42,7 +46,8 @@ footer {
 
 #sidePic img {
   width: 10rem;
-  height: 2.76 * width;
+  /* height: 2.76 * width; */
+  height:auto;
 }
 
 .exampleWrapper {
