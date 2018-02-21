@@ -17,6 +17,7 @@ header {
 section {
   padding-top: 6rem;
   padding-bottom: 1rem;
+  z-index: 1;
 }
 
 footer {
@@ -37,6 +38,11 @@ footer {
 #FAQ {
   display:none;
   padding-top: 1rem;
+}
+
+#sidePic img {
+  width: 10rem;
+  height: 2.76 * width;
 }
 
 .exampleWrapper {
