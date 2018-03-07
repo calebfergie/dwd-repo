@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var mongojs = require('mongojs');
 var dbconfig = require('../config/dbconfig.js');
+// var d3 = require("d3");
 var responseList = [];
 var dataSet = [];
 var tempSet = [];
@@ -18,7 +19,7 @@ db.on('connect', function() {
   console.log('database connected')
 })
 
-//Copy a version of the whole db as "responseList" and "dataset" as the array of guesses
+//Copy a version of the whole db as "responseList" and "dataSet" as the array of guesses
 db.guessTable.find({}, function(err, saved) {
   if (err || !saved) {
     console.log("No results");
@@ -84,14 +85,14 @@ router.post('/', function(request, respond, next) {
     subTotal = subTotal + dataSet[i];
   }
   var average = (subTotal / dataSet.length).toFixed(1);
-  console.log("average: " + average);
+  var twoThirds = (average * 2 / 3).toFixed(0);
+  console.log("average: " + average + "  | answer: " + twoThirds);
+
 
   //    2. GET THE MEDIAN -  thx caseyjustus: https://gist.github.com/caseyjustus/1166258
   dataSet.sort(function(a, b) {
     return a - b
   });
-
-
 
   var half = Math.floor(dataSet.length / 2);
 
@@ -136,11 +137,36 @@ router.post('/', function(request, respond, next) {
 
   ///END MATH
 
+  //Provide some qualitative feedback as well :D
+  var success = ["not at all", "not", "only kinda", "pretty", "super", "the most"];
+  var cutoff = 100 / success.length;
+  var tier = cutoff;
+
+  for (i = 0; i < success.length; i++) {
+    if (tier < percentage) {
+      tier = tier + cutoff;
+    } else {
+      var level = success[i];
+      break;
+    };
+  }
+
+  console.log("turns out this person is " + level);
+
+  // Add responses to json file just because
+
+  var writer = fs.createWriteStream('./public/data.json');
+  writer.write(JSON.stringify(dataSet));
+
+
   //pack it up 4 rendering
   var data = {
     sub: submission,
     avg: average,
-    per: percentage
+    per: percentage,
+    lev: level,
+    ttr: twoThirds,
+    arr: dataSet
   }
 
   respond.render('results', data);

@@ -30,18 +30,19 @@
   <section id="results">
     <div class="row">
       <div class="col-md-3 mx-auto" id=wokeResult>
-        You are NOT woke
+        You are <%= lev %> woke
       </div>
       <div class="col-md-5 mx-auto" id=statResult>
         You submitted <%= sub %> <br>
-        The current average is: <%= avg %><br>
-        <p class="subText">You scored closer to the answer than <%= per %>% of participants</p>
+        <p class=subText>The current average of all submissions is <%= avg %>, so the the current <b>"correct" answer is <%= ttr %></b>.</p><br>
+        Hey! You scored closer to the answer than <%= per %>% of participants!</p>
       </div>
     </div>
   </section>
     <div class="row">
       <div class="col-md-10 mx-auto" id="chart">
-      This is a chart
+      This is a chart<br>
+      <%= arr %>
     </div>
     </div>
     <div class="row">
@@ -82,6 +83,9 @@
     <!-- /.container -->
   </footer>
 </container>
+
+  <!-- d3 stuff -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js"></script>
