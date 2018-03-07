@@ -26,6 +26,12 @@
     $('.exampleWrapper').collapse('toggle');
   });
 
+  // Opens the context section if it clicked on
+  $('.contextToggle').click(function() {
+    console.log("toggle clicked");
+    $('.contextContents').collapse('toggle');
+  });
+
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#mainNav',

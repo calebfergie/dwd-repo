@@ -10,3 +10,6 @@
 node_modules
 dbconfig.js
 config.js
+my-cert.pem
+my-key.pem
+.pem

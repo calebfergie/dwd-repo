@@ -46,10 +46,59 @@ iframe {
 
 #sidePic img {
   width: 10rem;
-  /* height: 2.76 * width; */
   height:auto;
 }
 
 .exampleWrapper {
   display:none;
+}
+
+.contextContents {
+  display:none;
+  font-size:1rem;
+  padding: 1rem;
+}
+
+#summary {
+  background-color:rgb(209, 229, 243);
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  border-radius:50px;
+}
+
+#wokeResult {
+  font-size: 3rem;
+  padding: 1.7rem;
+  border-width:0.3rem;
+  border-style:solid;
+  border-color:#a8b8ba;
+  border-radius:30px;
+}
+
+#statResult {
+  font-size: 1.5rem;
+  padding: 1.7rem;
+  border-width:0.1rem;
+  border-style:solid;
+  border-color:#a8b8ba;
+  border-radius:30px;
+}
+
+#chart {
+padding: 1.7rem;
+border-width:0.1rem;
+border-style:solid;
+border-color:#a8b8ba;
+border-radius:30px;
+}
+
+#uhhWhat {
+  padding-top:1rem;
+}
+
+.subText {
+  padding-top:1rem;
+  font-size: 1rem;
 }

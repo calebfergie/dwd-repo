@@ -27,25 +27,54 @@
     </div>
   </nav>
 
-  <section id="main">
-    <div class="row" id=submissionSummary>
-      <div class="col-md-2 mx-auto" id=sidePic>
-        <img src="https://i.imgur.com/BIm9PsB.jpg">
+  <section id="results">
+    <div class="row">
+      <div class="col-md-3 mx-auto" id=wokeResult>
+        You are NOT woke
       </div>
-      <div class="col-lg-8 mx-auto">
-        <h2>You submitted  <%= answer.submission %> </h2><br>
-        <h2>The current average is <%= answer.avg %> </h2>
-        <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0sPVEBAtwmg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-      <div class="col-lg-8 mx-auto" id=discussion>
-        <div class="col-lg-8 mx-auto">
-          <p class="lead">There is no one answer to this game, but it sure makes you think...<br>
-            <a href="https://www.npr.org/sections/money/2011/10/11/141249864/heres-the-winner-in-our-pick-a-number-game">read more about it here</a></p>
-        </div>
+      <div class="col-md-5 mx-auto" id=statResult>
+        You submitted <%= sub %> <br>
+        The current average is: <%= avg %><br>
+        <p class="subText">You scored closer to the answer than <%= per %>% of participants</p>
       </div>
     </div>
   </section>
+    <div class="row">
+      <div class="col-md-10 mx-auto" id="chart">
+      This is a chart
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 mx-auto" id=uhhWhat>
+      (<a class=contextToggle href="#toggleIncluded">Uhh what?</a>)
+    </div>
+  </div>
+  <div class="contextContents">
+    <div class="row" id="summary">
+      <div class="col-md-5 mx-auto">
+        <b>There is no “right” answer to the game.</b> <br>  <br>This game is an exercise in what are called <a href="http://personal.lse.ac.uk/dasgupt2/hob_main.html">Higher Order Beliefs</a> - in other words <b> thinking about what others are thinking</b>.
+        <br><br>You may have experienced your own answer changing as you though through the riddle, perhaps similarly to the illustration on the right ->
+        <br><br>Memes aside, the riddle is designed to make you consider:
+        <ul>
+          <li>Higher order beliefs</li>
+          <li>Your thoughts about your peers</li>
+          <li>Our rationale with what is known as “imperfect information”.</li>
+        </ul>
+        <br><a href="https://www.npr.org/sections/money/2011/10/11/141249864/heres-the-winner-in-our-pick-a-number-game">NPR's Planet Money</a> podcast played the same game with many more people. How does it compare to what you see here?
+        <br><br>This scene in  <a href="http://www.imdb.com/title/tt0093779/">The Princess Bride</a> also demonstrates this idea!
+        <br><br><iframe src="https://www.youtube.com/embed/0sPVEBAtwmg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-5 mx-auto" id="illustration">
+        <img src="https://i.imgur.com/XZRcF4K.png">
+    </div>
+  </div>
+  </div>
+
+  <section id="evenMore">
+    <div class="row">
+    </div>
+  </section>
+
   <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Caleb Ferguson 2018      |         <a href="http://calebfergie.com/">calebfergie.com</a>      |      Adapted from the <a href="https://theincidentaleconomist.com/whats-23-of-the-average/">incidental economist</a></p>
