@@ -49,6 +49,10 @@ iframe {
   height:auto;
 }
 
+#subField {
+  width:10rem;
+}
+
 .exampleWrapper {
   display:none;
 }

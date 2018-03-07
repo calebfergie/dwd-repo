@@ -140,9 +140,9 @@
           </div>
           <div class="col-lg-8 mx-auto" id=postForm>
             <p class="lead">What number would you guess?</p>
-            <form action="/results" method="POST"> 
+            <form action="/results" method="POST">
               <label for="answer">Your guess:</label>
-              <input type="number" name="submitted_answer" />
+              <input id="subField" type="number" min="1" max="100" name="submitted_answer" />
               <input type="submit" name="submitButton" value="Submit" />
             </form>
           </div>

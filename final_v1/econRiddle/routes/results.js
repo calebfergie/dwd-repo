@@ -5,8 +5,6 @@ var dbconfig = require('../config/dbconfig.js');
 var responseList = [];
 var dataSet = [];
 var tempSet = [];
-var saved;
-var record;
 
 //Setup
 var db = mongojs(dbconfig.username + ":" + dbconfig.password + "@ds239128.mlab.com:39128/mr-worldwide", ["guessTable"]);
@@ -59,26 +57,25 @@ router.post('/', function(request, respond, next) {
     repeatVisitor: repeatVisit
   };
 
-  skip the submission
-  if its the same cookie, otherwise add it to the db
-  if (userInfo.repeatVisitor === "yes") {
-    var submission = "an answer already!";
-  } else {
-    console.log(textValue + " added to the list of responses");
-    var submission = numberValue;
+  // skip the submission if its the same cookie, otherwise add it to the db
+  // if (userInfo.repeatVisitor === "yes") {
+  //   var submission = "an answer already!";
+  // } else {
+  console.log(textValue + " added to the list of responses");
+  var submission = numberValue;
 
-    //add it the the local array
-    dataSet.push(numberValue);
+  //add it the the local array
+  dataSet.push(numberValue);
 
-    // add repsonse to the database
-    db.guessTable.save({
-      "guess": numberValue,
-      "time": "tbd"
-    }, function(err, saved) {
-      if (err || !saved) console.log("Not saved");
-      else console.log("Saved");
-    });
-  }
+  // add repsonse to the database
+  db.guessTable.save({
+    "guess": numberValue,
+    "time": "tbd"
+  }, function(err, saved) {
+    if (err || !saved) console.log("Not saved");
+    else console.log("Saved");
+  });
+  // }
 
   //DO MATHS
   //    1. GET THE MEAN
