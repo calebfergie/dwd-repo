@@ -59,24 +59,24 @@ router.post('/', function(request, respond, next) {
   };
 
   // skip the submission if its the same cookie, otherwise add it to the db
-  // if (userInfo.repeatVisitor === "yes") {
-  //   var submission = "an answer already!";
-  // } else {
-  console.log(textValue + " added to the list of responses");
-  var submission = numberValue;
+  if (userInfo.repeatVisitor === "yes") {
+    var submission = "an answer already!";
+  } else {
+    console.log(textValue + " added to the list of responses");
+    var submission = numberValue;
 
-  //add it the the local array
-  dataSet.push(numberValue);
+    //add it the the local array
+    dataSet.push(numberValue);
 
-  // add repsonse to the database
-  db.guessTable.save({
-    "guess": numberValue,
-    "time": "tbd"
-  }, function(err, saved) {
-    if (err || !saved) console.log("Not saved");
-    else console.log("Saved");
-  });
-  // }
+    // add repsonse to the database
+    db.guessTable.save({
+      "guess": numberValue,
+      "time": "tbd"
+    }, function(err, saved) {
+      if (err || !saved) console.log("Not saved");
+      else console.log("Saved");
+    });
+  }
 
   //DO MATHS
   //    1. GET THE MEAN
@@ -123,6 +123,7 @@ router.post('/', function(request, respond, next) {
 
   // compare the values
   for (i = 0; i < tempData.length; i++) {
+    console.log("sample set: " + tempData[subPos] + "   |    comparison point: " + tempData[i]);
     if (tempData[subPos][1] < tempData[i][1]) {
       farther = farther + 1;
     } else if (tempData[subPos][1] == tempData[i][1]) {
@@ -151,12 +152,12 @@ router.post('/', function(request, respond, next) {
     };
   }
 
-  console.log("turns out this person is " + level);
+  console.log("turns out this person is " + level + " woke");
 
-  // Add responses to json file just because
-
-  var writer = fs.createWriteStream('./public/data.json');
-  writer.write(JSON.stringify(dataSet));
+  // // Add responses to json file just because
+  //
+  // var writer = fs.createWriteStream('./public/data.json');
+  // writer.write(JSON.stringify(dataSet));
 
 
   //pack it up 4 rendering

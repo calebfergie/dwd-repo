@@ -15,6 +15,8 @@
 
   <!-- Custom styles for this template -->
   <link href="/stylesheets/style.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/stylesheets/style.css" rel="stylesheet">
 
 </head>
 
@@ -35,14 +37,14 @@
       <div class="col-md-5 mx-auto" id=statResult>
         You submitted <%= sub %> <br>
         <p class=subText>The current average of all submissions is <%= avg %>, so the the current <b>"correct" answer is <%= ttr %></b>.</p><br>
-        Hey! You scored closer to the answer than <%= per %>% of participants!</p>
+        Hey! Your submission is closer to the answer than <%= per %>% of participants!</p>
       </div>
     </div>
   </section>
     <div class="row">
       <div class="col-md-10 mx-auto" id="chart">
       This is a chart<br>
-      <%= arr %>
+      <p class="array"><%= arr %></p>
     </div>
     </div>
     <div class="row">
@@ -84,12 +86,14 @@
   </footer>
 </container>
 
-<!-- Necessary JS JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Custom JavaScript for this theme -->
-<script src="/javascripts/scrolling-nav.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Plugin JavaScript -->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="/javascripts/scrolling-nav.js"></script>
 </body>
-
 </html>

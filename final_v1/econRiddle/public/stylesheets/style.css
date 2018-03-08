@@ -106,3 +106,7 @@ border-radius:30px;
   padding-top:1rem;
   font-size: 1rem;
 }
+
+.array {
+  overflow-wrap: break-word;
+}
