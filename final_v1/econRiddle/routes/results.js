@@ -50,6 +50,7 @@ router.post('/', function(request, respond, next) {
   }
   if (visits > 1) {
     repeatVisit = "yes";
+
   } else {
     repeatVisit = "no"
   }
@@ -58,25 +59,25 @@ router.post('/', function(request, respond, next) {
     repeatVisitor: repeatVisit
   };
 
-  // skip the submission if its the same cookie, otherwise add it to the db
-  if (userInfo.repeatVisitor === "yes") {
-    var submission = "an answer already!";
-  } else {
-    console.log(textValue + " added to the list of responses");
-    var submission = numberValue;
+  // // skip the submission if its the same cookie, otherwise add it to the db
+  // if (userInfo.repeatVisitor === "yes") {
+  //   var submission = "an answer already!";
+  // } else {
+  console.log(textValue + " added to the list of responses");
+  var submission = numberValue;
 
-    //add it the the local array
-    dataSet.push(numberValue);
+  //add it the the local array
+  dataSet.push(numberValue);
 
-    // add repsonse to the database
-    db.guessTable.save({
-      "guess": numberValue,
-      "time": "tbd"
-    }, function(err, saved) {
-      if (err || !saved) console.log("Not saved");
-      else console.log("Saved");
-    });
-  }
+  // add repsonse to the database
+  db.guessTable.save({
+    "guess": numberValue,
+    "time": "tbd"
+  }, function(err, saved) {
+    if (err || !saved) console.log("Not saved");
+    else console.log("Saved");
+  });
+  // }
 
   //DO MATHS
   //    1. GET THE MEAN
@@ -152,7 +153,7 @@ router.post('/', function(request, respond, next) {
     };
   }
 
-  console.log("turns out this person is " + level + " woke");
+  console.log("turns out this person is " + level + " aware");
 
   // // Add responses to json file just because
   //
