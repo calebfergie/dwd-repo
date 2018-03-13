@@ -3,7 +3,7 @@ The top-level repo for DWD class at NYU ITP.  DWD is a class about web developme
 More details on the class can be found [here](https://itp.nyu.edu/~sve204/dwd_spring2018/).
 
 ## Whats Inside?
-Over the course of 7 weeks, I worked on iterations of a single website -  [an economics riddle.](http://sandbox.calebfergie.com:8000/). Each week the website was improved in terms of design, functionality, and/or security. Each 'week' folder contains the relevant files for an iteration of the website. More writing about the class can be found on [my blog](http://www.blog.calebfergie.com/category/web-dev/).
+Over the course of 7 weeks, I worked on iterations of a single website -  [an economics riddle](http://sandbox.calebfergie.com:8000/). Each week the website was improved in terms of design, functionality, and/or security. Each 'week' folder contains the relevant files for an iteration of the website. More writing about the class can be found on [my blog](http://www.blog.calebfergie.com/category/web-dev/).
 
 ### Week 1
   * Created and ran the web page on a simple http server using [node.js](https://nodejs.org/en/)
@@ -17,6 +17,7 @@ Over the course of 7 weeks, I worked on iterations of a single website -  [an ec
 
 ### Week 5
   * Updated the design of the website using [bootstraps](https://getbootstrap.com/)
+  * Added better interactivity using [Jquery + AJAX](https://api.jquery.com/category/ajax/)
 
 ### Weeks 6 & 7 (final_v1)
   * Utilized [cookies](https://www.npmjs.com/package/cookies-js) to detect repeat visitors
@@ -25,6 +26,7 @@ Over the course of 7 weeks, I worked on iterations of a single website -  [an ec
   * Updated content and copy of website
 
 ### Target improvements
+  * Use HTTPS
   * Provide data visualization using [D3.js](https://d3js.org/)
   * Feed repeat users their previous response
   * Add timestamp data for change-over-time analysis
